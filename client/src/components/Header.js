@@ -9,7 +9,7 @@ function Header() {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
-        setUserInfo(userInfo.username);
+        setUserInfo(userInfo);
       });
     });
   }, []);
