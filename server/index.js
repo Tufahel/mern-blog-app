@@ -52,6 +52,10 @@ app.get('/profile', (req,res) => {
     });
 })
 
+app.post('/logout', (req,res) => {
+    res.cookie('token', '').json('ok');
+})
+
 // mongodb+srv://mern-blog-app:883243567@cluster0.5xiwisl.mongodb.net/?retryWrites=true&w=majority
 
 app.listen(4000);
