@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
-import IndexPage from './components/IndexPage';
-import LoginPage from './components/LoginPage';
-import RegisterPage from './components/RegisterPage';
+import IndexPage from './pages/IndexPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import { UserContextProvider } from './components/UserContext';
 
 function App() {
