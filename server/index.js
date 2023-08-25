@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const User = require('./models/User');
 const bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser')
 const app = express();
 
 const salt = bcrypt.genSaltSync(10);
@@ -11,6 +12,7 @@ const secret= 'dsfajsr4343jkasj343sdfaskj'
 
 app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 app.use(express.json());
+app.use(cookieParser());
 
 mongoose.connect('mongodb+srv://mern-blog-app:883243567@cluster0.5xiwisl.mongodb.net/?retryWrites=true&w=majority')
 
@@ -40,6 +42,14 @@ app.post('/login', async (req, res) => {
     } else {
         res.status(400).json('wrong credentials');
     }
+})
+
+app.get('/profile', (req,res) => {
+    const {token} = req.cookies;
+    jwt.verify(token, secret, {}, (err, info) => {
+        if (err) throw err;
+        res.json(info);
+    });
 })
 
 // mongodb+srv://mern-blog-app:883243567@cluster0.5xiwisl.mongodb.net/?retryWrites=true&w=majority
