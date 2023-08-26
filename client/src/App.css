@@ -89,3 +89,7 @@ button {
   border-radius: 5px;
   padding: 7px 0;
 }
+
+form button {
+  margin-top: 5px;
+}
