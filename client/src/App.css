@@ -142,3 +142,27 @@ post-page a {
 .post-page .content p {
   line-height: 1.6rem;
 }
+
+.edit-row {
+  text-align: center;
+}
+
+.edit-btn {
+  background-color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  padding: 15px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+a svg {
+  height: 24px;
+}
+
+a {
+  cursor: pointer;
+}
